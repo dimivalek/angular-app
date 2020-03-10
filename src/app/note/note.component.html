@@ -1,0 +1,64 @@
+<table style="width:100%">
+  <tr>
+    <td>
+      Note
+    </td>
+    <td>
+      Name
+    </td>
+    <td>
+      Date
+    </td>
+  </tr>
+  <tr *ngFor="let fetchednote of fetchednotes">
+    <td>{{fetchednote.note}}</td>
+
+    <td>{{fetchednote.name}}</td>
+
+    <td>{{fetchednote.date}}</td>
+  </tr>
+</table>
+
+<form>
+  <p>Select the parameters to retrieve notes</p>
+  <input type="checkbox" id="time" name="date" value="date" (click)="onclickDate()">
+  <label for="date">Date</label>
+  <br>
+  <input type="checkbox" id="name" name="name" value="name" (click)="onclickName()">
+  <label for="name">Name</label>
+  <br>
+  <br>
+  <p *ngIf="checkname==true">Please add a name to search</p>
+  <input [(ngModel)]="searchname" *ngIf="checkname==true" type="text" id="searchname" name="searchname" [value]="searchname" [required]="searchname">
+  <br>
+  <br>
+  <p *ngIf="checkdate==true">Please add a date to search</p>
+  <input [(ngModel)]="searchdate" *ngIf="checkdate==true" type="date" id="searchdate" name="searchdate" [value]="searchdate" [required]="searchdate">
+  <br>
+  <br>
+  <input type="submit" (click)="onclickFetch()" value="Fetch Notes">
+</form>
+
+<br>
+<br>
+
+<form>
+  <p>Please type the note, your name and the date</p>
+  <label for="note">Note</label>
+  <br>
+  <input [(ngModel)]="newnote" type="text" id="note" name="note" [value]="newnote" [required]="newnote">
+  <p *ngIf="newnote.length==0">Please add a note to be sent</p>
+  <br>
+  <label for="name">Name</label>
+  <br>
+  <input [(ngModel)]="name" type="text" id="name" name="name" [value]="name" [required]="name">
+  <p *ngIf="name.length==0">Please add your name</p>
+  <br>
+  <label for="name">Date</label>
+  <br>
+  <input [(ngModel)]="date" type="date" id="date" name="date" [value]="date" [required]="date">
+  <p *ngIf="date==null">Please add a date</p>
+  <br>
+  <br>
+  <input type="submit" (click)="onclickSave()" value="Save Note">
+</form>
