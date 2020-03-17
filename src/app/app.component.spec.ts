@@ -23,6 +23,7 @@ describe('AppComponent', () => {
   });
 
   it('should render title', () => {
+    //TypeError: Cannot read property 'textContent' of null
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;

@@ -3,9 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\auth",
     "\\src\\app\\note",
     "\\src\\app\\notes"
   ],
-  "SelectedNode": "\\src\\app\\note\\notehttpmethods.service.ts",
+  "SelectedNode": "\\src\\app\\note\\note.component.ts",
   "PreviewInSolutionExplorer": false
 }

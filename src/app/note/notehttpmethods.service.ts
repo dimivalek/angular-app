@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { NoteFormat } from './noteformat';
+//import { Token } from './token';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class NotehttpmethodsService {
-  private _url: string = `http://localhost:5000/api/notes`;
+  _url: string = `http://localhost:5000/api/notes`;
   constructor(private http: HttpClient) { }
   receiveNotes(byname?: string, bydate?: Date): Observable<NoteFormat[]> {
 

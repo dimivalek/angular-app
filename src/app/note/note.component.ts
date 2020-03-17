@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { NotehttpmethodsService } from './notehttpmethods.service';
 import { NoteFormat } from './noteformat';
+//import { Token } from './token';
+
+import { MatTableModule } from '@angular/material/table'; 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input'; 
 
 @Component({
   selector: 'app-note',
@@ -32,7 +39,7 @@ export class NoteComponent implements OnInit {
   }
 
   onclickFetch() {
-  
+  //needs to be refactored
     if (this.checkdate == false && this.checkname == false) {
       this._httpservice.receiveNotes()
         .subscribe(data => this.fetchednotes = data, error => console.log(error));

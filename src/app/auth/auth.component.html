@@ -1,0 +1,36 @@
+<h2>If not singed up yet, subscibe bellow</h2>
+<h3>Sign up form</h3>
+<form>
+  <p>Please add a user name</p>
+  <mat-label for="username">Username</mat-label>
+  <br>
+  <input [(ngModel)]="username" type="text" id="username" name="username" [value]="username" [required]="username" placeholder="e.g Dimitris Valekardas">
+  <p *ngIf="username.length==0">Please fill the username field</p>
+  <br>
+  <p>Please choose carefully a password</p>
+  <mat-label for="password">Password</mat-label>
+  <br>
+  <input [(ngModel)]="password" type="password" id="password" name="password" [value]="password" [required]="password" minlength="8" placeholder="Damn, do not put qwerty for a password">
+  <p *ngIf="password.length==0">Please fill the password field</p>
+  <p *ngIf="password.length<6">Password must be at least 6 length</p>
+  <br>
+  <input type="submit" (click)="onclickSubmit()" value="{{isLoginMode ? 'Login':'Sign Up'}}" id="signup" [disabled]="password.length<6 || password.length==0 || username.length==0" >
+  <button (click)="onclickSwitch()">Switch to {{isLoginMode ? 'Sign Up':'Login'}}</button>
+</form>
+
+<!--<h3>Sing in bellow</h3>
+<form>
+  <p>Please add a user name</p>
+  <mat-label for="username">Username</mat-label>
+  <br>
+  <input [(ngModel)]="username" type="text" id="username" name="username" [value]="username" [required]="username" placeholder="e.g Dimitris Valekardas">
+  <p *ngIf="username.length==0">Please fill the username field</p>
+  <br>
+  <p>Please choose carefully a password</p>
+  <mat-label for="password">Password</mat-label>
+  <br>
+  <input [(ngModel)]="password" type="password" id="password" name="password" [value]="password" [required]="password" placeholder="Hope you have not chosen qwerty">
+  <p *ngIf="password.length==0">Please fill the password field</p>
+  <br>
+  <input type="submit" (click)="onclickSave()" value="Sign In" id="signin">
+</form>-->
